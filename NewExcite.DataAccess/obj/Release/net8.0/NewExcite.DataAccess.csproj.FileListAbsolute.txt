@@ -1,0 +1,17 @@
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\bin\Release\net8.0\NewExcite.DataAccess.deps.json
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\bin\Release\net8.0\NewExcite.DataAccess.runtimeconfig.json
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\bin\Release\net8.0\NewExcite.DataAccess.dll
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\bin\Release\net8.0\NewExcite.DataAccess.pdb
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\bin\Release\net8.0\NewExcite.Entitiy.dll
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\bin\Release\net8.0\NewExcite.Entitiy.pdb
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.csproj.AssemblyReference.cache
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.AssemblyInfoInputs.cache
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.AssemblyInfo.cs
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcit.277EAD09.Up2Date
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.dll
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\refint\NewExcite.DataAccess.dll
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.pdb
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\NewExcite.DataAccess.genruntimeconfig.cache
+C:\Users\enise\source\repos\NewExcite\NewExcite.DataAccess\obj\Release\net8.0\ref\NewExcite.DataAccess.dll

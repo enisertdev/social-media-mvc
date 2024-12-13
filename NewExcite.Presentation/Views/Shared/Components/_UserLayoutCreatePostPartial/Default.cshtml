@@ -1,0 +1,9 @@
+﻿@model PostCreateViewModel
+
+<form asp-action="CreatePost" asp-controller="MainPage" method="post" class="create-post">
+    <div class="profile-photo">
+        <img src="~/social-media-website-main/images/profile-1.jpg">
+    </div>
+    <input asp-for="PostContent" type="text" placeholder="What's on your mind, @User.Identity.Name ?" id="create-post" required>
+    <input type="submit" value="Post" class="btn btn-primary">
+</form>

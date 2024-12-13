@@ -1,0 +1,173 @@
+﻿@using NewExcite.Entitiy.Concrete
+@model IEnumerable<UserPost>
+
+
+<div class="feeds">
+    @foreach (var post in Model)
+    {
+        <div class="feed">
+            <div class="head">
+                <div class="user">
+                    <div class="profile-photo">
+                        <img src="~/social-media-website-main/images/profile-13.jpg">
+                    </div>
+                    <div class="info">
+                        <a style="color:black;" asp-action="Index" asp-controller="UserProfile" asp-route-userName="@post.User.UserName">
+                            <h3>@post.User.UserName</h3>
+                        </a>
+                        <small>@post.TimeStamp.Value.ToLocalTime().ToString("g")</small>
+                    </div>
+                </div>
+                <span class="edit">
+                    <button id="editPost_@post.PostId" class="btn btn-link text-muted">
+                        <i class="uil uil-ellipsis-h"></i>
+                    </button>
+                </span>
+            </div>
+
+            <div class="photo">
+                @if (post.MediaUrl != null)
+                {
+                    <img src="~/social-media-website-main/images/feed-1.jpg">
+                }
+            </div>
+
+            <div class="caption">
+                <p>
+                    @post.PostContent
+                    <span class="harsh-tag"></span>
+                </p>
+            </div>
+
+
+            <div class="action-buttons">
+                <div class="interaction-buttons">
+                    @if (post.PostLikes.Count != 0)
+                    {
+                        bool userHasLiked = false;
+
+                        // Tüm beğenileri kontrol et
+                        foreach (var like in post.PostLikes)
+                        {
+                            if (like.User.UserName == User.Identity.Name)
+                            {
+                                userHasLiked = true;
+                                break; // Kullanıcı zaten beğenmişse döngüyü sonlandır
+                            }
+                        }
+
+                        // Kullanıcı daha önce beğenmişse "Dislike" butonunu göster
+                        if (userHasLiked)
+                        {
+                            <form method="post" asp-controller="Like" asp-action="Dislike" style="display:inline;">
+                                <input type="hidden" name="PostId" value="@post.PostId" />
+                                <button type="submit" style="background:none; border:none; color:pink; cursor:pointer; padding:0; font-size:inherit;">
+                                    <span style="display:inline-flex; align-items:center; justify-content:center;">
+                                        <i class="uil uil-heart" style="font-size:1.5rem;"></i>
+                                    </span>
+                                </button>
+                            </form>
+                        }
+                        // Kullanıcı daha önce beğenmemişse "Like" butonunu göster
+                        else
+                        {
+                            <form method="post" asp-controller="Like" asp-action="Like" style="display:inline;">
+                                <input type="hidden" name="PostId" value="@post.PostId" />
+                                <button type="submit" style="background:none; border:none; color:black; cursor:pointer; padding:0; font-size:inherit;">
+                                    <span style="display:inline-flex; align-items:center; justify-content:center;">
+                                        <i class="uil uil-heart" style="font-size:1.5rem;"></i>
+                                    </span>
+                                </button>
+                            </form>
+                        }
+                    }
+                    else
+                    {
+                        {
+                            <form method="post" asp-controller="Like" asp-action="Like" style="display:inline;">
+                                <input type="hidden" name="PostId" value="@post.PostId" />
+                                <button type="submit" style="background:none; border:none; color:black; cursor:pointer; padding:0; font-size:inherit;">
+                                    <span style="display:inline-flex; align-items:center; justify-content:center;">
+                                        <i class="uil uil-heart" style="font-size:1.5rem;"></i>
+                                    </span>
+                                </button>
+                            </form>
+                        }
+                    }
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+            </div>
+
+            <div class="liked-by">
+                <span><img src="~/social-media-website-main/images/profile-10.jpg"></span>
+                <span><img src="~/social-media-website-main/images/profile-4.jpg"></span>
+                <span><img src="~/social-media-website-main/images/profile-15.jpg"></span>
+                @if (post.PostLikes.Any())
+                {
+                    var likesCount = post.PostLikes.Count();
+
+                    @if (post.PostLikes.Count() > 1)
+                    {
+                        <p><b>@post.PostLikes.First().User.UserName </b> ve <b>@(likesCount - 1) kişi daha tarafından beğenildi</b></p>
+                    }
+                    else
+                    {
+                        <p><b>@post.PostLikes.First().User.UserName </b> tarafından beğenildi</p>
+                    }
+                }
+                else
+                {
+                    <b>Henüz kimse bu gönderiyi beğenmedi.</b>
+                }
+
+            </div>
+
+       
+            <div class="comments text-muted">
+                <div class="comments-section">
+                    <button id="viewAllComments_@post.PostId" class="btn btn-link text-muted">Tüm @post.PostComments.Count adet yorumları göster</button>
+                    <div id="commentsContainer_@post.PostId" class="comments-container" style="display: none;">
+                        <!-- Yorumlar burada gösterilecek -->
+                        @foreach (var comment in post.PostComments)
+                        {
+                            <div class="comment">
+                                <form asp-action="Index" asp-controller="UserProfile" asp-route-userName="@comment.User.UserName">
+                                    <button type="submit" style=" background: none; border: none; pointer-events: auto;">
+                                        <p><strong>@comment.User.UserName:</strong> @comment.Comment</p>
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="add-comment-section" style="display: flex; align-items: center; margin-top: 10px;">
+                    <form method="post" asp-action="CreateComment" asp-controller="Comment">
+                        <input type="text" name="comment" class="form-control" placeholder="Add a comment..." required style="flex: 1; margin-right: 8px;" />
+                        <input name="postId" value="@post.PostId" hidden />
+                        <input name="userName" value="@User.Identity.Name" hidden />
+                        <button type="submit" class="btn btn-primary">Post</button>
+                    </form>
+                </div>
+            </div>
+            <script>
+                document.getElementById('viewAllComments_@post.PostId').addEventListener('click', function() {
+                    const commentsContainer = document.getElementById('commentsContainer_@post.PostId');
+                    if (commentsContainer.style.display === 'none') {
+                        commentsContainer.style.display = 'block';
+                    } else {
+                        commentsContainer.style.display = 'none';
+                    }
+                });
+
+            </script>
+        </div>
+    }
+
+    <!----------------- END OF FEED 1 -------------------->
+
+</div>
+

@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/callback/site.css" asp-append-version="true" />
+
+<body class="body-container">
+    <h1 class="message">Doğrulama kodunuz doğru! Giriş sayfasına yönlendirileceksiniz.</h1>
+    <div class="loader" id="loader-1"></div>
+</body>
+<script>
+    setTimeout(function()
+    {
+        var url = '@Url.Action("Index","Login")';
+        window.location.href = url;
+    },4000)
+</script>

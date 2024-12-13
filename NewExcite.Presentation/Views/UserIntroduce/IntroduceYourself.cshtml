@@ -1,0 +1,202 @@
+﻿@model AppUserIntroduceDto
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 25vh;
+            width: 70%;
+        }
+    </style>
+</head>
+
+<div class="container">
+
+    <form class="well form-horizontal" asp-action="IntroduceYourself" method="post" id="contact_form">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Kullanıcı Bilgileri</legend>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Kullanıcı Adı</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="UserName" placeholder="Kullanıcı Adınız" class="form-control" type="text" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Ad</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="FirstName" placeholder="Adınız" class="form-control" type="text" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Soyad</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="LastName" placeholder="Soyadınız" class="form-control" type="text" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">E-Mail</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input asp-for="Email" placeholder="Email Adresiniz" class="form-control" type="email" readonly>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Telefon Numarası</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input asp-for="PhoneNumber" placeholder="Telefon Numaranız" class="form-control" type="tel" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">İlçe</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input asp-for="City" placeholder="İlçe" class="form-control" type="text" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">İl</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select asp-for="State" class="form-control selectpicker" required>
+                            <option value="" disabled selected>Lütfen yaşadığınız ili seçiniz</option>
+                            <option>Adana</option>
+                            <option>Adıyaman</option>
+                            <option>Afyonkarahisar</option>
+                            <option>Ağrı</option>
+                            <option>Amasya</option>
+                            <option>Ankara</option>
+                            <option>Antalya</option>
+                            <option>Artvin</option>
+                            <option>Aydın</option>
+                            <option>Balıkesir</option>
+                            <option>Bilecik</option>
+                            <option>Bingöl</option>
+                            <option>Bitlis</option>
+                            <option>Bolu</option>
+                            <option>Burdur</option>
+                            <option>Bursa</option>
+                            <option>Çanakkale</option>
+                            <option>Çankırı</option>
+                            <option>Çorum</option>
+                            <option>Denizli</option>
+                            <option>Diyarbakır</option>
+                            <option>Edirne</option>
+                            <option>Elazığ</option>
+                            <option>Erzincan</option>
+                            <option>Erzurum</option>
+                            <option>Eskişehir</option>
+                            <option>Gaziantep</option>
+                            <option>Giresun</option>
+                            <option>Gümüşhane</option>
+                            <option>Hakkâri</option>
+                            <option>Hatay</option>
+                            <option>Isparta</option>
+                            <option>Mersin</option>
+                            <option>İstanbul</option>
+                            <option>İzmir</option>
+                            <option>Kars</option>
+                            <option>Kastamonu</option>
+                            <option>Kayseri</option>
+                            <option>Kırklareli</option>
+                            <option>Kırşehir</option>
+                            <option>Kocaeli</option>
+                            <option>Konya</option>
+                            <option>Kütahya</option>
+                            <option>Malatya</option>
+                            <option>Manisa</option>
+                            <option>Kahramanmaraş</option>
+                            <option>Mardin</option>
+                            <option>Muğla</option>
+                            <option>Muş</option>
+                            <option>Nevşehir</option>
+                            <option>Niğde</option>
+                            <option>Ordu</option>
+                            <option>Rize</option>
+                            <option>Sakarya</option>
+                            <option>Samsun</option>
+                            <option>Siirt</option>
+                            <option>Sinop</option>
+                            <option>Sivas</option>
+                            <option>Tekirdağ</option>
+                            <option>Tokat</option>
+                            <option>Trabzon</option>
+                            <option>Tunceli</option>
+                            <option>Şanlıurfa</option>
+                            <option>Uşak</option>
+                            <option>Van</option>
+                            <option>Yozgat</option>
+                            <option>Zonguldak</option>
+                            <option>Aksaray</option>
+                            <option>Bayburt</option>
+                            <option>Karaman</option>
+                            <option>Kırıkkale</option>
+                            <option>Batman</option>
+                            <option>Şırnak</option>
+                            <option>Bartın</option>
+                            <option>Ardahan</option>
+                            <option>Iğdır</option>
+                            <option>Yalova</option>
+                            <option>Karabük</option>
+                            <option>Kilis</option>
+                            <option>Osmaniye</option>
+                            <option>Düzce</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-success">Kaydet <span class="glyphicon glyphicon-send"></span></button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+</div>
+<script src="/_framework/aspnetcore-browser-refresh.js"></script>

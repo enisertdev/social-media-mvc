@@ -1,0 +1,14 @@
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\bin\Debug\net8.0\NewExcite.Entitiy.deps.json
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\bin\Debug\net8.0\NewExcite.Entitiy.runtimeconfig.json
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\bin\Debug\net8.0\NewExcite.Entitiy.dll
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\bin\Debug\net8.0\NewExcite.Entitiy.pdb
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.csproj.AssemblyReference.cache
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.AssemblyInfoInputs.cache
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.AssemblyInfo.cs
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.csproj.CoreCompileInputs.cache
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.dll
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\refint\NewExcite.Entitiy.dll
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.pdb
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\NewExcite.Entitiy.genruntimeconfig.cache
+C:\Users\enise\SOURCE\repos\NewExcite\NewExcite.Entitiy\obj\Debug\net8.0\ref\NewExcite.Entitiy.dll

@@ -1,0 +1,118 @@
+﻿@model ProfileViewModel
+<style>
+    .test {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap when needed */
+        justify-content: center; /* Centers items horizontally */
+        align-items: center; /* Aligns items vertically */
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column; /* Stack items vertically by default */
+    }
+
+    .username {
+        margin-bottom: 10px; /* Add spacing below username */
+        font-size: 16px; /* Adjust font size as needed */
+        text-align: center; /* Center the username */
+    }
+
+    .follow-button {
+        background-color: #1877f2;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 10px; /* Add spacing below button */
+    }
+
+        .follow-button:hover {
+            background-color: #166fe5;
+        }
+
+    .stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px; /* Add some spacing between the button and stats */
+    }
+
+    .stat {
+        margin: 5px 10px; /* Adjust margin between stat elements */
+        text-align: center;
+    }
+
+    .stat-value {
+        font-size: 18px; /* Adjust font size for stat values */
+        font-weight: bold;
+    }
+
+    /* Media query for smaller screens */
+    @@media (max-width: 768px) {
+        .test {
+            flex-direction: column; /* Ensure items stack vertically */
+            align-items: center; /* Center items */
+        }
+
+        .username {
+            margin-bottom: 10px; /* Add spacing below username */
+        }
+
+        .follow-button {
+            margin-bottom: 10px; /* Add spacing below button */
+        }
+    }
+</style>
+
+<div class="test">
+    <p class="username">@Model.UserName</p>
+    @if (Model.UserName == User.Identity.Name)
+    {
+
+        <a href="/MainPage/Index"><button class="follow-button">Profili Düzenle</button></a>
+    }
+    @{
+        else if(Model.UsersFollowingEachOther == true)
+        {
+            <a asp-controller="Friendship" asp-action="UnFollow" asp-route-username="@Model.UserName">
+                <button class="follow-button">Takipten çıkar</button>
+            </a>
+        }
+        else if(Model.CurrentUserFollowingButNotBeenAccepted == true)
+        {
+
+            <a asp-controller="Friendship" asp-action="CancelFollow" asp-route-username="@Model.UserName">
+                <button class="follow-button">Takip isteğini iptal et</button>
+            </a>
+        }
+        else if(Model.TargetUserFollowingCurrentAndNotBeenAccepted == true && Model.CurrentUserFollowingButNotBeenAccepted == false)
+        {
+            <a asp-controller="Friendship" asp-action="FollowBack" asp-route-username="@Model.UserName">
+                <button class="follow-button">Geri Takip Et</button>
+            </a>
+        }
+        else
+        {
+            <a asp-controller="Friendship" asp-action="Follow" asp-route-username="@Model.UserName">
+                <button class="follow-button">Takip Et</button>
+            </a>
+        }
+      
+    }
+    <div class="stats-container">
+        <div class="stat">
+            <div class="stat-value">@Model.PostCount</div>
+            <div>Gönderi</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">@Model.FollowerCount</div>
+            <div>Takipçi</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">@Model.FollowCount</div>
+            <div>Takip</div>
+        </div>
+    </div>
+</div>

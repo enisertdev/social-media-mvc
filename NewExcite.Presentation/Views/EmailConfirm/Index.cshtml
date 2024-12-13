@@ -1,0 +1,14 @@
+﻿@model EmailConfirmViewModel
+@{
+    Layout = null;
+}
+
+<form asp-action="Index" method="post">
+    <h2>Hesap Etkinleştirme</h2>
+    <label for="phonenum">E-mailinize gelen 6 haneli kodu aşağıya giriniz.</label><br />
+    <input type="hidden" value="@ViewBag.Email" asp-for="Email" />
+    <input type="text" asp-for="ConfirmCode" required>
+    <button type="submit">Gönder</button>
+    <div asp-validation-summary="ModelOnly"></div>
+    <p class="p">Kod gelmedi mi ?  <a href="http://www.sitepoint.com/client-side-form-validation-html5/">Tekrar Gönder</a>.</p>
+</form>
